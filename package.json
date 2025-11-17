@@ -1,0 +1,50 @@
+{
+  "name": "@beproduct/nestjs-auth",
+  "version": "0.1.0",
+  "description": "NestJS authentication module for BeProduct IDS (OpenID Connect)",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "prepublishOnly": "npm run build"
+  },
+  "keywords": [
+    "nestjs",
+    "beproduct",
+    "oidc",
+    "openid-connect",
+    "authentication",
+    "oauth2",
+    "jwt",
+    "passport"
+  ],
+  "author": "BeProduct",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/BeProduct/beproduct-org-nestjs-auth"
+  },
+  "bugs": {
+    "url": "https://github.com/BeProduct/beproduct-org-nestjs-auth/issues"
+  },
+  "homepage": "https://github.com/BeProduct/beproduct-org-nestjs-auth#readme",
+  "peerDependencies": {
+    "@nestjs/common": "^10.0.0",
+    "@nestjs/config": "^3.0.0",
+    "@nestjs/jwt": "^10.0.0",
+    "@nestjs/passport": "^10.0.0",
+    "passport": "^0.7.0",
+    "passport-jwt": "^4.0.0",
+    "passport-openidconnect": "^0.1.1"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "@types/passport-jwt": "^4.0.1",
+    "typescript": "^5.6.3"
+  }
+}
