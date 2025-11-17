@@ -40,7 +40,7 @@ export class BeProductAuthModule {
           secret: options.jwtSecret,
           signOptions: {
             expiresIn: options.jwtExpiration || '30d',
-          },
+          } as any,
         }),
       ],
       providers: [
@@ -92,7 +92,7 @@ export class BeProductAuthModule {
                   secret: config.jwtSecret,
                   signOptions: {
                     expiresIn: config.jwtExpiration || '30d',
-                  },
+                  } as any,
                 };
               }
             : async (optionsFactory: BeProductAuthOptionsFactory) => {
@@ -101,7 +101,7 @@ export class BeProductAuthModule {
                   secret: config.jwtSecret,
                   signOptions: {
                     expiresIn: config.jwtExpiration || '30d',
-                  },
+                  } as any,
                 };
               },
           inject: options.inject || [],
