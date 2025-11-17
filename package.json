@@ -43,8 +43,15 @@
     "passport-openidconnect": "^0.1.1"
   },
   "devDependencies": {
+    "@nestjs/common": "^10.0.0",
+    "@nestjs/config": "^3.0.0",
+    "@nestjs/jwt": "^10.0.0",
+    "@nestjs/passport": "^10.0.0",
     "@types/node": "^20.0.0",
     "@types/passport-jwt": "^4.0.1",
+    "passport": "^0.7.0",
+    "passport-jwt": "^4.0.1",
+    "passport-openidconnect": "^0.1.1",
     "typescript": "^5.6.3"
   }
 }
