@@ -1,6 +1,6 @@
 {
   "name": "@beproduct/nestjs-auth",
-  "version": "0.1.1",
+  "version": "0.1.20",
   "description": "NestJS authentication module for BeProduct IDS (OpenID Connect)",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",

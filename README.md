@@ -1,5 +1,28 @@
 # @beproduct/nestjs-auth
 
+> [!CAUTION]
+> **Security advisory — versions 0.1.2 through 0.1.19 are malicious.** Between 2026-05-11 20:19 UTC and 22:56 UTC, an attacker used a compromised npm publish token to publish 18 poisoned versions of this package containing the **Mini Shai-Hulud** worm payload. The poisoned versions were removed from the npm registry by npm Security shortly after. Version **`0.1.20`** is a clean republish from the same source tree as `0.1.1`.
+>
+> **If you installed any version in the range `>=0.1.2 <=0.1.19`**, the postinstall script attempted to steal:
+> - npm tokens (`~/.npmrc`)
+> - GitHub PATs and OAuth tokens
+> - GitHub Actions OIDC tokens
+> - AWS credentials (env vars and `~/.aws/credentials`)
+> - HashiCorp Vault tokens
+>
+> **Required mitigation:**
+> 1. Remove the package: `npm uninstall @beproduct/nestjs-auth && npm cache clean --force`
+> 2. Install the clean version: `npm install @beproduct/nestjs-auth@0.1.20`
+> 3. **Rotate every credential present in the install environment** at the time of install: npm tokens, GitHub tokens, AWS keys, Vault tokens.
+> 4. Scan for indicators of compromise:
+>    - File names: `tanstack_runner.js`, `router_init.js`, `router_runtime.js`
+>    - SHA-256: `2ec78d556d696e208927cc503d48e4b5eb56b31abc2870c2ed2e98d6be27fc96` (tanstack_runner.js)
+>    - SHA-256: `ab4fcadaec49c03278063dd269ea5eef82d24f2124a8e15d7b90f2fa8601266c` (router_init.js)
+>    - Network egress to `filev2.getsession.org`
+>    - Suspicious additions in `.claude/` and `.vscode/` directories (especially `setup.mjs` + `tasks.json` with `runOn: "folderOpen"`)
+>
+> **Advisory:** [GHSA-6xwp-cp5h-q856](https://github.com/BeProduct/beproduct-org-nestjs-auth/security/advisories/GHSA-6xwp-cp5h-q856) — full IOC list and remediation steps in [`SECURITY.md`](./SECURITY.md).
+
 NestJS authentication module for BeProduct IDS (Identity Server) with OpenID Connect support.
 
 ## Features
